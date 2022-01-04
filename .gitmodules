@@ -1,0 +1,6 @@
+[submodule "vendor/wiki-security-arweave"]
+	path = vendor/wiki-security-arweave
+	url = git@github.com:Strongpool/wiki-security-arweave.git
+[submodule "vendor/wiki-client"]
+	path = vendor/wiki-client
+	url = git@github.com:Strongpool/wiki-client.git
