@@ -10,10 +10,11 @@ WORKDIR /wiki
 ADD *.coffee /wiki/
 ADD *.json /wiki/
 ADD index.js /wiki/
-ADD init.sh ./init.sh
 
 RUN npm install
 
 EXPOSE 3000
 
-CMD "./init.sh"
+ADD entrypoint ./entrypoint
+
+ENTRYPOINT ["./entrypoint"]

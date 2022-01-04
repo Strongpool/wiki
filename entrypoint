@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mkdir -p /data
+
+if [ ! -z "$CONFIG" ]; then
+  echo "$CONFIG" > config.json
+else
+  echo '{ "data": "/data", "security_type": "arweave" }' > config.json
+fi
+
+node index.js start --config config.json "$@"
