@@ -10,6 +10,7 @@ WORKDIR /wiki
 ADD *.coffee /wiki/
 ADD *.json /wiki/
 ADD index.js /wiki/
+ADD vendor /wiki/vendor
 
 RUN npm install
 

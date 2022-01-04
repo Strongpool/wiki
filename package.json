@@ -30,7 +30,7 @@
     "glob": "^7.1.7",
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
-    "wiki-client": "^0.23.0",
+    "wiki-client": "file:vendor/wiki-client",
     "wiki-plugin-activity": "^0.4.8",
     "wiki-plugin-assets": "^0.3.0",
     "wiki-plugin-audio": "^0.1.10",
@@ -72,8 +72,7 @@
     "wiki-plugin-search": "^0.1.9",
     "wiki-plugin-transport": "^0.1.5",
     "wiki-plugin-video": "^0.2.10",
-    "wiki-security-friends": "^0.2.3",
-    "wiki-security-passportjs": "^0.5.0",
+    "wiki-security-arweave": "file:vendor/wiki-security-arweave",
     "wiki-server": "^0.20.0"
   },
   "devDependencies": {
