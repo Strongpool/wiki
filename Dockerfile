@@ -12,7 +12,11 @@ ADD *.json /wiki/
 ADD index.js /wiki/
 ADD vendor /wiki/vendor
 
-RUN npm install
+RUN npm install \
+  && cd /wiki/vendor/wiki-client \
+  && npx grunt build \
+  && cd /wiki/vendor/wiki-security-arweave \
+  && npx grunt build
 
 EXPOSE 3000
 
