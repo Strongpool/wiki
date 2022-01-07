@@ -1,0 +1,8 @@
+---
+
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - aws --region $REGION ecs update-service --force-new-deployment --cluster $CLUSTER --service $SERVICE

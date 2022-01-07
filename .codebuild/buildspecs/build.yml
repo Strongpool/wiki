@@ -1,0 +1,29 @@
+---
+
+version: 0.2
+
+env:
+  shell: bash
+  variables:
+    DOCKER_BUILDKIT: 1
+  parameter-store:
+    GITHUB_ACCESS_TOKEN: '/strongpool/_/_/automation/github-access-token'
+  exported-variables:
+    - COMMIT
+    - IMAGE_TAG
+
+phases:
+  pre_build:
+    commands:
+      - start-docker
+      - ghcr-login
+      - COMMIT="$(git rev-parse HEAD)"
+      - IMAGE_TAG="$(voom-like-version)"
+
+  build:
+    commands:
+      - ./.codebuild/build
+
+cache:
+  paths:
+    - /root/last-success-version
