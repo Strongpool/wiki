@@ -5,6 +5,8 @@ set -ex
 skip-ci && exit 0
 already-succeeded && exit 0
 
+git submodule update --init --recursive
+
 docker build --build-arg FEDARWIKI_VERSION=$IMAGE_TAG -t ghcr.io/strongpool/wiki:$IMAGE_TAG .
 docker push ghcr.io/strongpool/wiki:$IMAGE_TAG
 docker build --build-arg FEDARWIKI_VERSION=$IMAGE_TAG -t ghcr.io/strongpool/wiki:latest .
