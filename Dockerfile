@@ -14,8 +14,10 @@ ADD vendor /wiki/vendor
 
 RUN npm install \
   && cd /wiki/vendor/wiki-client \
+  && npm install \
   && npx grunt build \
   && cd /wiki/vendor/wiki-security-arweave \
+  && npm install \
   && npx grunt build
 
 EXPOSE 3000
